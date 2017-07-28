@@ -1,0 +1,9 @@
+# ignore all logs
+*.log
+
+# OS generated files #
+######################
+.DS_Store
+
+# Testing Scripts
+testing.js

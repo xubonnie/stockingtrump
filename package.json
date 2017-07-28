@@ -19,6 +19,7 @@
   "dependencies": {
     "bluebird": "^3.5.0",
     "csv-parser": "^1.11.0",
+    "debug": "^2.6.8",
     "fs": "0.0.1-security",
     "moment": "^2.18.1",
     "npm": "^5.3.0",
