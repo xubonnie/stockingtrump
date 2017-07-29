@@ -1,5 +1,6 @@
 const path = require('path');
 const dirPath = path.join(process.cwd(), 'twitter-data');
+const Promise = require('bluebird');
 const fs = Promise.promisifyAll(require('fs'));
 const moment = require('moment');
 

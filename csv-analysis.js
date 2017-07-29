@@ -1,8 +1,8 @@
 const Promise = require('bluebird');
-const csvFilePath ='prices-split-adjusted.csv';
+const csvFilePath = 'prices-split-adjusted.csv';
 const csv = require('csvtojson');
 
-export.filterCsv = function(tweets) {
+exports.filterCsv = function(tweets) {
   let stockTickers = {
     'JWN': true,
     'GM': true,
@@ -31,5 +31,3 @@ export.filterCsv = function(tweets) {
       })
   })
 }
-
-module.exports = csvAnalysis;

@@ -1,6 +1,6 @@
 const Promise = require('bluebird');
 const request = require('request-promise');
-const tweetAnalysis = require('tweet-analysis');
+const tweetAnalysis = require('./tweet-analysis');
 
 let api = {
   getSentiment(tweet) {

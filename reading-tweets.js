@@ -1,10 +1,9 @@
 const path = require('path');
-const cwd = process.cwd();
 const Promise = require('bluebird');
-const sentiment = require(path.join(cwd, 'sentiment-analysis'));
-const tweet = require(path.join(cwd, 'tweet-analysis'));
-const csv = require(path.join(cwd, 'csv-analysis'));
-const trading = require(path.join(cwd, 'trading-analysis'));
+const sentiment = require('./sentiment-analysis');
+const tweet = require('./tweet-analysis');
+const csv = require('./csv-analysis');
+const trading = require('./trading-analysis');
 
 tweet.getTweets()
 .then((tweetsArr) => {
@@ -16,8 +15,8 @@ tweet.getTweets()
   return csv.filterCsv(tweets);
 })
 .then((tweetsCsvArr) => {
-  return Promise.map(tweetsCsvArr[1], (tweet) => {
-    return tweet.getStockTweetData(tweet, tweetsCsvArr[0])
+  return Promise.map(tweetsCsvArr[1], (eachTweet) => {
+    return tweet.getStockTweetData(eachTweet, tweetsCsvArr[0])
   });
 })
 .then((stockObjArr) => {

@@ -1,7 +1,7 @@
 const Promise = require('bluebird');
-const sentiment= require('sentiment-analysis');
+const sentiment= require('./sentiment-analysis');
 
-function getTradingResults(stockObjArr) {
+exports.getTradingResults = function(stockObjArr) {
   return new Promise((resolve, reject) => {
     let net = 0;
     for (const stockObj of stockObjArr) {
@@ -15,5 +15,3 @@ function getTradingResults(stockObjArr) {
     resolve(net);
   });
 }
-
-module.exports = tradingAnalysis;
